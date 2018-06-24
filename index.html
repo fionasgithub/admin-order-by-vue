@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.2/Chart.bundle.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <title>Admin Order</title>
 </head>
 
@@ -57,31 +59,23 @@
                 <div class="card-deck">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
+                            <h5 class="card-title">
+                                <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE</h5>
+                            <h3 class="card-text" style="color:#fe6383">54,540</h3>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
+                            <h5 class="card-title">
+                                <i class="fas fa-boxes"></i>TOTAL COST</h5>
+                            <h3 class="card-text" style="color:#37a2eb">12,660</h3>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This
-                                card has even longer content than the first to show that equal height action.</p>
-                            <p class="card-text">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </p>
+                            <h5 class="card-title">
+                                <i class="fas fa-money-bill"></i>NET INCOME</h5>
+                            <h3 class="card-text" style="color:#ffcd56">41,880</h3>
                         </div>
                     </div>
                 </div>
@@ -91,40 +85,236 @@
             <div class="col-12">
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1 class="display-4">Chart Template</h1>
-                        <p class="lead"></p>
+                        <div>
+                            <canvas id="canvas"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-6">
-                <div class="card mb-3">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+                        <h5 class="card-title">Transaction Website</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-6">
+                                    <i class="fab fa-facebook-square"></i>
+                                    <span>Facebook.com</span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span class="mx-2">45,836</span>
+                                    <span class="mx-2">
+                                        <i class="fas fa-arrow-up"></i>20%
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-6">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google.com</span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span class="mx-2">45,836</span>
+                                    <span class="mx-2">
+                                        <i class="fas fa-arrow-up"></i>20%
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-6">
+                                    <i class="fab fa-wordpress"></i>
+                                    <span>Wordpress</span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span class="mx-2">45,836</span>
+                                    <span class="mx-2">
+                                        <i class="fas fa-arrow-up"></i>20%
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-12 col-sm-6">
-                <div class="card mb-3">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+                        <h5 class="card-title">Latest Orders</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/hahax100px.jpg" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h5>Vintage T-shirt</h5>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <p>2018/6/13 13:42</p>
+                                            <p>Belle Willis</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p>Total</p>
+                                            <p>3,200</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/hahax100px.jpg" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h5>Vintage T-shirt</h5>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <p>2018/6/13 13:42</p>
+                                            <p>Belle Willis</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p>Total</p>
+                                            <p>3,200</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/hahax100px.jpg" alt="">
+                                </div>
+                                <div class="col-9">
+                                    <h5>Vintage T-shirt</h5>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <p>2018/6/13 13:42</p>
+                                            <p>Belle Willis</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p>Total</p>
+                                            <p>3,200</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <script>
+            var lineChartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'TOTAL REVENUE',
+                    borderColor: window.chartColors.red,
+                    backgroundColor: window.chartColors.red,
+                    fill: false,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor()
+                    ],
+                    yAxisID: 'y-axis-1',
+                }, {
+                    label: 'TOTAL COST',
+                    borderColor: window.chartColors.blue,
+                    backgroundColor: window.chartColors.blue,
+                    fill: false,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor()
+                    ],
+                    yAxisID: 'y-axis-2'
+                }, {
+                    label: 'NET INCOME',
+                    borderColor: window.chartColors.yellow,
+                    backgroundColor: window.chartColors.yellow,
+                    fill: false,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor()
+                    ],
+                    yAxisID: 'y-axis-3'
+                }]
+            };
+
+            window.onload = function () {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myLine = Chart.Line(ctx, {
+                    data: lineChartData,
+                    options: {
+                        responsive: true,
+                        hoverMode: 'index',
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: 'Chart.js Line Chart - Multi Axis'
+                        },
+                        scales: {
+                            yAxes: [{
+                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                display: true,
+                                position: 'left',
+                                id: 'y-axis-1',
+                            }, {
+                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                display: true,
+                                position: 'left',
+                                id: 'y-axis-2',
+                            }, {
+                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                display: true,
+                                position: 'right',
+                                id: 'y-axis-3',
+
+                                // grid line settings
+                                gridLines: {
+                                    drawOnChartArea: false, // only want the grid lines for one axis to show up
+                                },
+                            }],
+                        }
+                    }
+                });
+            };
+
+            document.getElementById('randomizeData').addEventListener('click', function () {
+                lineChartData.datasets.forEach(function (dataset) {
+                    dataset.data = dataset.data.map(function () {
+                        return randomScalingFactor();
+                    });
+                });
+
+                window.myLine.update();
+            });
+        </script>
 </body>
 
 </html>
